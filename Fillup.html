@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positive Compliment Generator</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background-color: #f3f3f3;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: #333;
+		}
+
+		.loading {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 24px;
+			color: #666;
+		}
+
+		.compliment {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 36px;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" action="compliment.php">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label for="sex">Sex:</label>
+		<input type="text" id="sex" name="sex"><br>
+
+		<label for="age">Age:</label>
+		<input type="text" id="age" name="age"><br>
+
+		<label for="interests">Interests:</label>
+		<input type="text" id="interests" name="interests"><br>
+
+		<input type="submit" value="Generate Compliment">
+	</form>
+</body>
+</html>
