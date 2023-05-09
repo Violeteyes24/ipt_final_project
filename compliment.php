@@ -6,10 +6,10 @@
   <body>
     <h2>Input Values:</h2>
     <?php
-      $name = $_POST['name'];
-      $sex = $_POST['sex'];
-      $age = $_POST['age'];
-      $interests = $_POST['interests'];
+      $name = $_GET['name'];
+      $sex = $_GET['sex'];
+      $age = $_GET['age'];
+      $interests = $_GET['interests'];
 
       echo "<p>Name: $name</p>";
       echo "<p>Sex: $sex</p>";

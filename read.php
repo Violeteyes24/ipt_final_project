@@ -11,8 +11,8 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod == "GET"){
 
-    $positive_compliment = get_positive_compliment();
-    echo $positive_compliment;
+    $poscomp_people_list = get_positive_compliment();
+    echo $poscomp_people_list;
 
 }
 else
