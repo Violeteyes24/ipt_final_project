@@ -6,7 +6,7 @@
 - Okay na
 # Connect PHP to a DATABASE
 - na sugdan na pero dli pa
-# connect everything to an API
+# Connect everything to an API
 - na sugdan na pero dli pa
 # Design sa tanan
 - na sugdan na, kuwang nalang guro gamay
