@@ -9,6 +9,6 @@
 # CRUD functionality
 - Okay na
 # Make an API request
-- na okay na ag random compliment generator
+- Okay na
 # Design sa tanan
-- na sugdan na, kuwang nalang guro gamay
+- dili ko kaybaw mo design, sorry daan HAHAHA
