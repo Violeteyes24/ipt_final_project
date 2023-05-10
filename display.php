@@ -119,6 +119,7 @@
 </head>
 
 <body>
+    <h1>Check your name, you are now listed! "Sorry sir na wala ag practicality dri"</h1>
 <div class = "CRUD">
     <div class = "c">
         <!-- Create new button -->
@@ -173,6 +174,7 @@
     <div class = "e">
     <!-- Exit button -->
     <button class="exit" name="exit" onclick="exit()">Exit</button>
+    <button class="delete-credentials" name="delete-credentials" style="width:20%; background-color:green;"><a style="color:white; text-decoration: none;" href="generate.php">Tell me a compliment</a></button>
     </div>    
 </div>
     

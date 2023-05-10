@@ -5,10 +5,10 @@
 # Connect Responses to PHP
 - Okay na
 # Connect PHP to a DATABASE
-- okay na
+- Okay na
 # CRUD functionality
-- na sugdan na, nanay idea
-# Connect everything to an API
-- na sugdan na pero dli pa
+- Okay na
+# Make an API request
+- na okay na ag random compliment generator
 # Design sa tanan
 - na sugdan na, kuwang nalang guro gamay
