@@ -5,7 +5,9 @@
 # Connect Responses to PHP
 - Okay na
 # Connect PHP to a DATABASE
-- na sugdan na pero dli pa
+- okay na
+# CRUD functionality
+- na sugdan na, nanay idea
 # Connect everything to an API
 - na sugdan na pero dli pa
 # Design sa tanan
