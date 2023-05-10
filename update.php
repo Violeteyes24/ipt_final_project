@@ -146,7 +146,7 @@
             <!-- Generate Compliment button -->
             <button class="generate-compliment" name="generate-compliment">Update</button>
 			<br><br>
-            
+            <a href="home.php" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Go Back</a>
             <!-- Exit button -->
             <button class="exit" name="exit" onclick="exit()">Exit</button>
         </form>

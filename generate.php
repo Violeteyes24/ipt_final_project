@@ -7,6 +7,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
+            background-image: url(https://wallpapertag.com/wallpaper/full/e/4/a/459515-beautiful-spring-flowers-background-desktop-2560x1600-mobile.jpg);
         }
         .container {
             display: flex;
@@ -85,6 +86,8 @@
             echo '<p>Error: Unable to retrieve compliment.</p>';
         }
         ?>
+<br><br>
+<a href="display.php" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Go Back</a>
     </div>
 </body>
 </html>

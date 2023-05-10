@@ -12,13 +12,16 @@
         body {
             font-family: sans-serif;
             background-color: darkgrey;
+            background-image: url(https://wallpapercave.com/wp/wp2754074.jpg);
             width: 90%;
         }
 
         h1 {
             text-align: center;
             margin-top: 50px;
-            color: #333;
+            color: white;
+            font-style: italic;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         .loading {
@@ -175,6 +178,7 @@
     <!-- Exit button -->
     <button class="exit" name="exit" onclick="exit()">Exit</button>
     <button class="delete-credentials" name="delete-credentials" style="width:20%; background-color:green;"><a style="color:white; text-decoration: none;" href="generate.php">Tell me a compliment</a></button>
+    <a href="home.php" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Go Back</a>
     </div>    
 </div>
     
@@ -205,4 +209,5 @@
     </div>
     <div class = "d">   
     </div> -->
-<html>
+
+</html>
