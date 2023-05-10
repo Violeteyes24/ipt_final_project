@@ -1,6 +1,15 @@
 <?php
     // Include connect.php to establish database connection
     include 'connect.php';
+    $id = $_GET['updateid'];
+    $sql = "select * from `positive_people` where id = $id";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['id'];
+    $name = $row['name']; 
+    $age = $row['age'];
+    $sex = $row['sex'];
+    $interests = $row['interests'];
 
     // Check if form is submitted
     if(isset($_POST['generate-compliment'])){
@@ -11,14 +20,14 @@
         $interests = $_POST['interests'];
     
         // Insert data into database
-        $sql = "INSERT INTO `positive_people` (id, name, age, sex, interests)
-                VALUES ('$id','$name','$age','$sex','$interests')";
+        $sql = "update `positive_people` set id='$id', name='$name', age=$age, sex='$sex', interests='$interests'
+        where id = $id";
         $result = mysqli_query($con, $sql);
 
         // Check if data is inserted successfully
         if($result){
             header('location:display.php');
-            // echo "<div class='compliment'>Data inserted successfully</div>";
+            // echo "Updated successfully";
         }else{
             die(mysqli_error($con));
         }
@@ -115,27 +124,27 @@
             <h2>Fill in your details</h2>
 
             <label for="id">Id:</label>
-            <input type="text" id="id" name="id" required>
+            <input type="text" id="id" name="id" value="<?php echo $id;?>" required>
 
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="<?php echo $name;?>" required>
 
             <label for="sex">Sex:</label>
             <!-- <input type="text" id="sex" name="sex"> -->
-            <select style="font-weight:normal;" id="sex" name="sex">
+            <select style="font-weight:normal;" id="sex" name="sex" value="<?php echo $sex;?>">
                 <option value="male">Male</option>
                 <option value="female">female</option>
                 <option value="others">others</option>
             </select>
 
             <label for="age">Age:</label>
-            <input type="text" id="age" name="age" required>
+            <input type="text" id="age" name="age" value="<?php echo $age;?>" required>
 
             <label for="interests">Interests:</label>
-            <textarea id="interests" name="interests" required></textarea>
+            <textarea id="interests" name="interests" value="<?php echo $interests;?>" required></textarea>
 
             <!-- Generate Compliment button -->
-            <button class="generate-compliment" name="generate-compliment">Generate Compliment</button>
+            <button class="generate-compliment" name="generate-compliment">Update</button>
 			<br><br>
             
             <!-- Exit button -->

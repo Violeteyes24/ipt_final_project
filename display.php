@@ -1,3 +1,6 @@
+<?php 
+    include 'connect.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -8,7 +11,8 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: gray;
+            background-color: darkgrey;
+            width: 90%;
         }
 
         h1 {
@@ -33,6 +37,7 @@
 
         /* Styles for the buttons */
         button {
+            /*margin-top: 10%;*/
             background-color: #4285f4;
             color: #fff;
             border: none;
@@ -45,9 +50,13 @@
         }
 
         /* Styles for the hover effect */
-        .generate-compliment:hover, .create-new:hover, .update-credentials:hover, .delete-credentials:hover, .exit:hover {
+        .generate-compliment:hover, .create-new:hover, .update-credentials:hover, .delete-credentials:hover, .exit:hover{
             background-color: #333;
             color: #fff;
+            margin: auto;
+            width: auto;
+            border: 2px 
+            padding: 10px; 
         }
 
         /* Styles for the form */
@@ -79,19 +88,119 @@
             box-sizing: border-box;
             margin-bottom: 20px;
         }
-        </style>
+        .CRUD, .c, .u, .d, .e{
+            margin: auto;
+            width: 100%;
+            /*border: 3px solid green;*/
+            padding: 10px; 
+        }
+        table {
+            border-collapse: collapse;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+        }
+            
+        th, td {
+            border: 1px solid white;
+            padding: 8px;
+        }
+            
+        th {
+            background-color: #4285f4;
+        }
+   
+        tr:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Create new button -->
-    <button class="create-new" name="create-new">Create new</button>
+<div class = "CRUD">
+    <div class = "c">
+        <!-- Create new button -->
+        <button class="create-new" name="create-new"><a style="color:white; text-decoration: none;" href="user.php"> Create new</a></button>
+        <br><br>
+    </div>
 
-    <!-- Update credentials button -->
-    <button class="update-credentials" name="update-credentials">Update credentials</button>
+    <div>
+        <table style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                <th style="border: 1px solid black; padding: 8px;">id</th>
+                <th style="border: 1px solid black; padding: 8px;">name</th>
+                <th style="border: 1px solid black; padding: 8px;">sex</th>
+                <th style="border: 1px solid black; padding: 8px;">age</th>
+                <th style="border: 1px solid black; padding: 8px;">interests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "Select * from `positive_people`";
+                $result = mysqli_query($con, $sql);
 
-    <!-- Delete credentials button -->
-    <button class="delete-credentials" name="delete-credentials">Delete credentials</button><br><br>
-
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+                        //extraction
+                        $id = $row['id'];
+                        $name = $row['name']; 
+                        $age = $row['age'];
+                        $sex = $row['sex'];
+                        $interests = $row['interests'];
+                        
+                        echo '
+                        <tr>
+                        <td style="border: 1px solid black; padding: 8px;">'.$id.'</td>
+                        <td style="border: 1px solid black; padding: 8px;">'.$name.'</td>
+                        <td style="border: 1px solid black; padding: 8px;">'.$age.'</td>
+                        <td style="border: 1px solid black; padding: 8px;">'.$sex.'</td>
+                        <td style="border: 1px solid black; padding: 8px;">'.$interests.'</td>
+                        <td style="border: 1px solid black; padding: 8px;">
+                            <button class="update-credentials" name="update-credentials" style="width:20%;"><a style="color:white; text-decoration: none;" href="update.php?updateid='.$id.'">Update</a></button>
+                            <button class="delete-credentials" name="delete-credentials" style="width:20%; background-color:red;"><a style="color:white; text-decoration: none;" href="delete.php?deleteid='.$id.'">Delete</a></button><br><br> 
+                        </td>
+                        </tr>';
+                    }     
+                }
+                ?>
+                
+            </tbody>
+        </table>
+    </div>
+    <div class = "e">
     <!-- Exit button -->
     <button class="exit" name="exit" onclick="exit()">Exit</button>
+    </div>    
+</div>
+    
 </body>
+<!-- <tr>
+                <td style="border: 1px solid black; padding: 8px;">John</td>
+                <td style="border: 1px solid black; padding: 8px;">25</td>
+                <td style="border: 1px solid black; padding: 8px;">New York</td>
+                <td style="border: 1px solid black; padding: 8px;">John</td>
+                <td style="border: 1px solid black; padding: 8px;">25</td>
+                </tr>
+                <tr>
+                <td style="border: 1px solid black; padding: 8px;">Jane</td>
+                <td style="border: 1px solid black; padding: 8px;">30</td>
+                <td style="border: 1px solid black; padding: 8px;">Los Angeles</td>
+                <td style="border: 1px solid black; padding: 8px;">30</td>
+                <td style="border: 1px solid black; padding: 8px;">Los Angeles</td>
+                </tr>
+                <tr>
+                <td style="border: 1px solid black; padding: 8px;">Bob</td>
+                <td style="border: 1px solid black; padding: 8px;">22</td>
+                <td style="border: 1px solid black; padding: 8px;">Chicago</td>
+                <td style="border: 1px solid black; padding: 8px;">22</td>
+                <td style="border: 1px solid black; padding: 8px;">Chicago</td>
+                </tr> -->
+
+    <!-- <div class = "u">
+    </div>
+    <div class = "d">   
+    </div> -->
 <html>
